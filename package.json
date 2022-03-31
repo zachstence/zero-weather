@@ -1,0 +1,26 @@
+{
+  "name": "zero-weather",
+  "version": "0.0.1",
+  "description": "DIY a simple weather station using a Raspberry Pi Zero W and a DHT22 temperature/humidity sensor.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "start": "ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zachstence/zero-weather.git"
+  },
+  "author": "zachstence",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zachstence/zero-weather/issues"
+  },
+  "homepage": "https://github.com/zachstence/zero-weather#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  }
+}
