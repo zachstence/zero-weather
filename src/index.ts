@@ -1,19 +1,18 @@
 import { promises as sensor } from "node-dht-sensor";
+import config from "config";
+
+import { report } from "./api";
 
 const TYPE = 22;
 const PIN = 14;
 
-const run = async () => {
+console.log("App started!");
+
+setInterval(async () => {
     try {
-        const {temperature, humidity} = await sensor.read(TYPE, PIN);
-
-        const timeStr = new Date().toLocaleString();
-        const tempStr = `${temperature.toFixed(1)}°C`;
-        const humStr = `${humidity.toFixed(1)}%`;
-        console.log(`${timeStr}\t${tempStr}\t${humStr}`);
+        const data = await sensor.read(TYPE, PIN);
+        await report(data);
     } catch (e) {
-        console.error(e);
+        console.error("Data collection failed", e);
     }
-};
-
-setInterval(run, 5000);
+}, 5000);
