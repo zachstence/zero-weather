@@ -1,6 +1,8 @@
 import axios from "axios";
 import config from "config";
 
+import { cToF } from "./util";
+
 const { url, org, bucket, token } = config.get("influxdb");
 
 const api = axios.create({
@@ -22,8 +24,11 @@ export interface Measurement {
 }
 
 export const report = async ({ temperature, humidity }: Measurement) => {
-    const timestamp = Math.floor(new Date().getTime() / 1000);
-    const data = `weather,host=zero-weather temperature=${temperature},humidity=${humidity} ${timestamp}`;
+    const ts = Math.floor(new Date().getTime() / 1000);
+    const tC = temperature.toFixed(2);
+    const tF = cToF(temperature).toFixed(2);
+    const h = humidity.toFixed(2);
 
+    const data = `weather,host=zero-weather tC=${tC},tF=${tF},h=${h} ${ts}`;
     return api({ data });
 };
