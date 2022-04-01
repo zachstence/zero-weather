@@ -3,16 +3,15 @@ import config from "config";
 
 import { report } from "./api";
 
-const TYPE = 22;
-const PIN = 14;
+const { type, pin, interval } = config.get("sensor");
 
 console.log("App started!");
 
 setInterval(async () => {
     try {
-        const data = await sensor.read(TYPE, PIN);
+        const data = await sensor.read(type, pin);
         await report(data);
     } catch (e) {
         console.error("Data collection failed", e);
     }
-}, 5000);
+}, interval * 1000);

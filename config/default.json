@@ -1,4 +1,9 @@
 {
+    "sensor": {
+        "type": 22,
+        "pin": 14,
+        "interval": 10
+    },
     "influxdb": {
         "org": "",
         "bucket": "",
