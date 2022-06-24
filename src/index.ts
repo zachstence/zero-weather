@@ -1,9 +1,9 @@
-import { promises as sensor } from "node-dht-sensor";
-import config from "config";
+import { promises as sensor, SensorData } from "node-dht-sensor";
 
+import { config } from "./config";
 import { report } from "./api";
 
-const { type, pin, interval } = config.get("sensor");
+const { type, pin, interval } = config.sensor;
 
 console.log("App started!");
 

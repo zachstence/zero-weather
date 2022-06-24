@@ -1,9 +1,9 @@
 import axios from "axios";
-import config from "config";
 
+import { config } from "./config";
 import { cToF } from "./util";
 
-const { url, org, bucket, token } = config.get("influxdb");
+const { url, org, bucket, token } = config.influxdb;
 
 const api = axios.create({
     baseURL: `${url}/api/v2/write`,
