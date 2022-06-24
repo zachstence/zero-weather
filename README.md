@@ -42,7 +42,7 @@ npm start
 ### Run using Docker
 ```sh
 docker run \
-    --device /dev/gpiomem:/dev/gpiomem
+    --device /dev/gpiomem:/dev/gpiomem \
     -v /path/to/config.json:/app/config/production.json:ro \
     zachstence/zero-weather
 ```
@@ -57,7 +57,7 @@ zero-weather:
     devices:
     - /dev/gpiomem:/dev/gpiomem
     volumes:
-    - /home/zach/config.json:/app/config/production.json:ro
+    - /path/to/config.json:/app/config/production.json:ro
     restart: unless-stopped
 ```
 
