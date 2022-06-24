@@ -72,6 +72,7 @@ Create a config file following the format in [`config/default.json`](config/defa
         "interval": 30
     },
     "influxdb": {
+        "url": "",
         "org": "",
         "bucket": "",
         "token": ""
@@ -84,6 +85,7 @@ Create a config file following the format in [`config/default.json`](config/defa
 | `sensor.type`           | Whether your connected sensor is a DHT11 or DHT22 sensor                                                                                             | `11` or `22`                                                                               |
 | `sensor.pin`            | The [GPIO pin](https://pinout.xyz/) that your DHT sensor is connected to                                                                             | `14`                                                                                       |
 | `sensor.interval`       | The interval in seconds that the sensor should be polled.<sup>1</sup>                                                                                | `30`                                                                                       |
+| `influxdb.url`          | The base URL of your InfluxDB instance                                                                                                               | `http://localhost`                                                                         |
 | `influxdb.org`          | The name of your [InfluxDB organization](https://docs.influxdata.com/influxdb/v2.1/organizations/create-org/)                                        | `org-name`                                                                                 |
 | `influxdb.bucket`       | The name of the [InfluxDB bucket](https://docs.influxdata.com/influxdb/v2.1/organizations/buckets/create-bucket/) to store the data in               | `zero-weather`                                                                             |
 | `influxdb.token`        | An [InfluxDB token](https://docs.influxdata.com/influxdb/v2.1/security/tokens/create-token) with write permissions to the specified bucket           | `9jPxAm8tEZSnRlw8nAsEDWZbvHCYeUetIAUrT_vj6RdHfG43RF5UKfazyZ1Z9dYu1o7prU7-kC4X8oUP-PSxTg==` |

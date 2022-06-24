@@ -5,6 +5,7 @@
         "interval": 10
     },
     "influxdb": {
+        "url": "",
         "org": "",
         "bucket": "",
         "token": ""
